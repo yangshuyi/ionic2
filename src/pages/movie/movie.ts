@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {LoadingController} from 'ionic-angular';
 import {Movie} from "../../providers/movie";
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'page-movie',

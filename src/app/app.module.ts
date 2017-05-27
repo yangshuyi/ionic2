@@ -9,22 +9,29 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Movie} from "../providers/movie";
+import {MoviePage} from "../pages/movie/movie";
+import {IntroPage} from "../pages/intro/intro";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    IntroPage,
+    MoviePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    IntroPage,
+    MoviePage
   ],
   providers: [
     StatusBar,
