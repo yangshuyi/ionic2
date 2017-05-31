@@ -1,12 +1,12 @@
 <ion-content>
   <ion-card>
-    <img src="{{movieSubject.largeImageUrl}}"/>
+    <img src="{{movieSubject?.images?.large}}"/>
     <ion-card-content>
       <ion-card-title>
-        {{movieSubject.title}}
+        {{movieSubject?.title}}
       </ion-card-title>
       <p>
-        {{movieSubject.summary}}
+        {{movieSubject?.summary}}
       </p>
     </ion-card-content>
   </ion-card>

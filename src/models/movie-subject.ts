@@ -1,12 +1,25 @@
+import {MovieImage} from "./movie-image";
 export interface MovieSubject {
+  id: number;
+  title:string;
+  year:string;
 
+  genres: string[];
+
+  images:MovieImage;
+
+  rating: any;
+
+  ratings_count:number;
   reviews_count:number;
 
   wish_count:number;
 
-  year:string;
+  casts:any;
 
-  title:string;
 
-summary:string;
+//
+// summary:string;
+
+  // images:
 }

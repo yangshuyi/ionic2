@@ -2,14 +2,16 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {LoadingController} from 'ionic-angular';
 import {Movie} from "../../providers/movie";
-import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {MovieSubject} from "../../models/movie-subject";
 
 @Component({
   selector: 'page-movie',
-  templateUrl: 'movie.html'
+  templateUrl: 'movie.html',
+  providers : [Movie]
 })
 export class MoviePage {
+  movieSubject: MovieSubject;
 
   constructor(public navCtrl:NavController, public loadingCtrl:LoadingController, public movie:Movie) {
 
@@ -27,17 +29,12 @@ export class MoviePage {
       content: '<div class="custom-spinner-container"><div class="custom-spinner-box"></div></div>',
       duration: 5000
     };
-
     let loading = this.loadingCtrl.create(loadingOpts);
     loading.present();
 
-    setTimeout(() => {
-      loading.dismiss();
-    }, 5000);
-
-
     this.movie.loadById('1764796').subscribe(movieSubject => {
-      console.log(movieSubject);
+      this.movieSubject = movieSubject;
+      loading.dismiss();
     });
   }
 

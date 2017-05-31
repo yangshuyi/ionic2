@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {MovieSubject} from "../models/movie-subject";
+import {Http} from "@angular/http";
 
 @Injectable()
 export class Movie {
@@ -13,7 +13,10 @@ export class Movie {
   }
 
   loadById(subjectId:string):Observable<MovieSubject> {
-    return this.http.get('${this.DOUBAN_MOVIE_SITE}//subject/${subjectId}')
+    // let header = new Headers();
+    // header.append('Content-Type', 'application/x-www-form-urlencoded');
+    // this.http.post(URL, pramas, header)
+    return this.http.get(`${this.DOUBAN_MOVIE_SITE}/subject/${subjectId}`)
       .map(res => <MovieSubject>res.json());
   }
 
